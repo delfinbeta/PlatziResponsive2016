@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+	
+	<title>Invie - tus mejores guitarras!!</title>
+	<meta name="creator" content="www.tecnod20.com" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" />
+	<link rel="stylesheet" href="css/invie.css" />
+</head>
+<body>
+	<section id="portada" class="portada background">  <!-- portada -->
+		<header id="header" class="header contenedor">  <!-- header -->
+			<figure class="logotipo">  <!-- logotipo -->
+				<img src="images/invie.png" height="60" width="186" alt="Invie" title="Invie" />
+			</figure>
+			<span id="burguer-button" class="burguer-button icon-menu"></span>
+			<nav id="menu" class="menu">  <!-- menu -->
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="index.html#guitarras">Guitarras</a></li>
+					<li><a href="precios.html">Precios</a></li>
+				</ul>
+			</nav>
+		</header>
+		<div class="contenedor">
+			<h1 class="titulo">Guitarras <span>Invie</span>sibles</h1>
+			<h3 class="title-a">Sé la estrella de rock que siempre quisite ser</h3>
+			<a href="#guitarras" class="button">Conoce más</a>
+		</div>
+	</section>
+	<section id="guitarras" class="guitarras contenedor">  <!-- guitarras -->
+		<h2>Nuestras Guitarras</h2>
+
+		<div class="video-demo-contenedor">
+			<div class="video-demo">
+				<div class="video-contenedor">
+					<iframe class="video-src" width="560" height="315" src="https://www.youtube.com/embed/vSk_xOy6Bwc" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+		
+		<!-- <video src="video"></video> -->
+
+		<article class="guitarra">
+			<img data-src="images/invie-acustica.png" width="350" alt="Invie Acústica" title="Invie Acústica" class="derecha" />
+			<div class="contenedor-guitarra-a">
+				<h3 class="title-b">Invie Acústica</h3>
+				<ol>
+					<li>Estilo vintage</li>
+					<li>Madera pura</li>
+					<li>Incluye estuche invisible de aluminio</li>
+				</ol>
+			</div>
+		</article>
+		<article class="guitarra b">
+			<img data-src="images/invie-classic.png" width="350" alt="Invie Clásica" title="Invie Clásica" class="izquierda" />
+			<div class="contenedor-guitarra-b">
+				<h3 class="title-b">Invie Clásica</h3>
+				<ol>
+					<li>Estilo vintage</li>
+					<li>Liviana</li>
+					<li>Inicia tu camino como rockstar</li>
+				</ol>
+			</div>
+		</article>
+	</section>
+	<footer class="footer">
+		<div class="contenedor">
+			<div class="contacto">
+				<img data-src="images/invie-white.png" alt="Logotipo Blanco" title="Logotipo Blanco" />
+				<a href="tel:+573024456678"><strong>Teléfono</strong> <span>3024456678</span></a>
+				<a href="mailto:contacto@invie.com"><strong>E-mail</strong> <span>contacto@invie.com</span></a>
+			</div>
+			<form class="formulario">
+				<div class="col1">
+					<label for="nombre">Nombre</label>
+					<input type="text" name="nombre" id="nombre"  required />
+					<label for="email">Email</label>
+					<input type="email" name="email" id="email"  required />
+					<div class="sexo">
+						<label for="mujer">
+							<input type="radio" id="mujer" name="sexo" value="mujer" checked /> Mujer
+						</label>
+						<label for="hombre">
+							<input type="radio" id="hombre" name="sexo" value="hombre" /> Hombre
+						</label>
+					</div>
+					<div class="intereses">
+						<label for="cotizacion">
+							<input type="checkbox" id="cotizacion" name="intereses" value="cotizacion" checked /> Cotización
+						</label>
+						<label for="reclamos">
+							<input type="checkbox" id="reclamos" name="intereses" value="reclamos" /> Reclamos
+						</label>
+						<label for="comentarios">
+							<input type="checkbox" id="comentarios" name="intereses" value="comentarios" /> Comentarios
+						</label>
+						<label for="otros">
+							<input type="checkbox" id="otros" name="intereses" value="otros" /> Otros
+						</label>
+					</div>
+				</div>
+				<div class="col2">
+					<label for="mensaje">Comentarios</label>
+					<textarea name="mensaje" id="mensaje" cols="30" rows="5"></textarea>
+					<input type="submit" value="Enviar" class="button" />
+				</div>
+			</form>
+		</div>
+	</footer>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.5.4/blazy.min.js"></script>
+	<script type="text/javascript">
+	var consulta = window.matchMedia('(max-width: 500px)');
+	var $menu = document.getElementById('menu');
+	var $burguerButton = document.getElementById('burguer-button');
+
+	// consulta.addListener(mediaQuery);
+	mediaQuery();
+
+	var bLazy = new Blazy({
+		selector: 'img'
+	});
+
+	function toggleMenu() {
+		$menu.classList.toggle('active');
+	};
+
+	function mediaQuery() {
+		if(consulta.matches) {
+			console.log("SI");
+			$burguerButton.addEventListener('touchstart', toggleMenu);
+		} else {
+			console.log("NO");
+			$burguerButton.removeEventListener('touchstart', toggleMenu);
+		}
+	};
+	</script>
+</body>
+</html>
